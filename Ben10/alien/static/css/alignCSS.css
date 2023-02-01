@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+    background-image: url(https://wallpaperaccess.com/full/4469613.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: right;
+    display: grid;
+    grid-template-rows: 1fr;
+    -webkit-text-fill-color: lightblue;
+}
+.lvl1{
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 7fr 2fr;
+}
+.lvl2{
+    height: 100%;
+}
+.head{
+    grid-row: 1;
+}
+.body{
+    grid-row: 2;
+}
+.legs{
+    grid-row: 3;
+    display: grid;
+}
+.legs .button{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
