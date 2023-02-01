@@ -3,15 +3,15 @@ body{
     background-image: url(https://wallpaperaccess.com/full/4469613.jpg);
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: right;
+    background-position: 400px;
     display: grid;
     grid-template-rows: 1fr;
-    -webkit-text-fill-color: lightblue;
+    -webkit-text-fill-color: slateblue;
 }
 .lvl1{
     grid-row: 1;
     display: grid;
-    grid-template-rows: 1fr 7fr 2fr;
+    grid-template-rows: 1fr 7fr 1fr;
 }
 .lvl2{
     height: 100%;
@@ -21,6 +21,16 @@ body{
 }
 .body{
     grid-row: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.leftbody{
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.rightbody{
+    grid-column: 2;
 }
 .legs{
     grid-row: 3;
@@ -29,4 +39,5 @@ body{
 .legs .button{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+    grid-gap: 50px;
+}   

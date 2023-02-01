@@ -1,0 +1,6 @@
+<div class="leftbody">{% include 'parts\leftbody.html' %}</div>
+<div class="rightbody">
+    {% for g in aliens %}
+    <img class="img A{{ forloop.counter }}" src="{{ g }}" alt="">
+    {% endfor %}
+</div>
