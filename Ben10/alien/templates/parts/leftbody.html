@@ -1,5 +1,9 @@
-<div class="leftarrow"><<</div>
-{% for x in cont %}
-<div class="content A{{ forloop.counter }}">{{ x }}</div>
-{% endfor %}
-<div class="rightarrow">>></div>
+<div class="leftarrow"><button class="button-49" onclick="next(0)"><<</button></div>
+<div class="content">
+    {% for x in cont %}
+    <h1 class="Alien cont{{ forloop.counter }} sweet-title"> 
+        {{ x }} 
+    </h1>
+    {% endfor %}
+</div>
+<div class="rightarrow"><button class="button-49" onclick="next(1)">>></button></div>
