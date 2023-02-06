@@ -7,14 +7,14 @@ function next(n){
     
     if (n==0){
         if(img_c == 1){
-            img_c = 5
+            img_c = 10
         }
         else{
             img_c -= 1;
         }
     }
     if (n == 1){
-        if(img_c == 5){
+        if(img_c == 10){
             img_c = 1
         }
         else{
