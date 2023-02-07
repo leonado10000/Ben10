@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTT</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .bix{
+            margin-top: 5%;
+            margin-left: 32%;
+            height: 500px;
+            width: 500px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            font-size: 100px;
+        }
+
+    </style>
+
+    <script>
+        
+        let point = -1;
+
+        function sexy(n){
+            if (document.querySelector(`.b${n}`).innerHTML == ""){
+                point += 1;
+                mark(n);
+            }
+        }
+
+        function mark(x){
+            if (point%2 == 0){
+                document.querySelector(`.b${x}`).innerHTML = "O";
+            }
+            else{
+                document.querySelector(`.b${x}`).innerHTML = "X";
+            }
+            check(x);
+        }
+        let ant = "";
+        let ans = 0;        // 0 no one wins
+                            // 1 wins on row/col
+                            // 2 wins on row/col
+                            // 3 wins on row/col
+                            // 5 wins on cross left
+                            // 6 wins on cross right
+
+        function check(x){
+            // if point is even check for O else X
+            if(point%2 == 0){
+                if(document.querySelector(".b1").innerHTML == "O" && document.querySelector(".b5").innerHTML == "O" && document.querySelector(".b9").innerHTML == "O"){
+                    call(6,"cr");
+                }
+                if(document.querySelector(".b3").innerHTML == "O" && document.querySelector(".b5").innerHTML == "O" && document.querySelector(".b7").innerHTML == "O"){
+                    call(5,"cr");
+                }
+                let i =1;
+                for(i=1;i<=3;i++){
+                    let a = document.querySelectorAll(`.r${i}`)
+                    let b = document.querySelectorAll(`.c${i}`)
+                    ans = i;
+                    ant = "r"
+                    for(j=0;j<3;j++){
+                        if (a[j].innerHTML != "O"){
+                            ans = 0;
+                            break;
+                        }
+                    }
+                    if (ans == i){
+                        call(i,"r");
+                        break;
+                    }
+                    ans = i;
+                    ant = "c"
+                    for(j=0;j<3;j++){
+                        if (b[j].innerHTML != "O"){
+                            ans = 0;
+                            break;
+                        }
+                    }
+                    if (ans == i){
+                        call(i,"c")
+                        break;
+                    }
+
+                }
+
+            }
+            else{
+                if(document.querySelector(".b1").innerHTML == "X" && document.querySelector(".b5").innerHTML == "X" && document.querySelector(".b9").innerHTML == "X"){
+                    call(6,"cr");
+                }
+                if(document.querySelector(".b3").innerHTML == "X" && document.querySelector(".b5").innerHTML == "X" && document.querySelector(".b7").innerHTML == "X"){
+                    call(5,"cr");
+                }
+                let i =1;
+                for(i=1;i<=3;i++){
+                    let a = document.querySelectorAll(`.r${i}`)
+                    let b = document.querySelectorAll(`.c${i}`)
+                    ans = i;
+                    ant = "r"
+                    for(j=0;j<3;j++){
+                        if (a[j].innerHTML != "X"){
+                            ans = 0;
+                            break;
+                        }
+                    }
+                    if (ans == i){
+                        call(i,"r");
+                        break;
+                    }
+                    ans = i;
+                    ant = "c"
+                    for(j=0;j<3;j++){
+                        if (b[j].innerHTML != "X"){
+                            ans = 0;
+                            break;
+                        }
+                    }
+                    if (ans == i){
+                        call(i,"c")
+                        break;
+                    }
+
+                }
+
+            }
+        }
+            
+        function call(x,y){
+            if(y == "cr" ){
+                if(x==6){
+                document.querySelector(".b1").style.backgroundColor = "lightgreen";
+                document.querySelector(".b5").style.backgroundColor = "lightgreen";
+                document.querySelector(".b9").style.backgroundColor = "lightgreen";
+                }
+                if(x==5){
+                    
+                document.querySelector(".b3").style.backgroundColor = "lightgreen";
+                document.querySelector(".b5").style.backgroundColor = "lightgreen";
+                document.querySelector(".b7").style.backgroundColor = "lightgreen";
+                }
+            }
+            if(y == "c" || y == "r"){
+                document.querySelectorAll(`.${y}${x}`).forEach(d => {
+                    d.style.backgroundColor = "lightgreen";
+                })
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <div class="bix">
+
+    
+        <button class="b1 bt r1 c1" onclick="sexy(1)"></button>
+    
+        <button class="b2 bt r1 c2" onclick="sexy(2)"></button>
+    
+        <button class="b3 bt r1 c3" onclick="sexy(3)"></button>
+    
+        <button class="b4 bt r2 c1" onclick="sexy(4)"></button>
+    
+        <button class="b5 bt r2 c2" onclick="sexy(5)"></button>
+    
+        <button class="b6 bt r2 c3" onclick="sexy(6)"></button>
+    
+        <button class="b7 bt r3 c1" onclick="sexy(7)"></button>
+
+        <button class="b8 bt r3 c2" onclick="sexy(8)"></button>
+
+        <button class="b9 bt r3 c3" onclick="sexy(9)"></button>
+
+    </div>
+    
+</body>
+</html>

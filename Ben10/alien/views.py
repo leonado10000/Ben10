@@ -17,9 +17,9 @@ cont = ["Alien X","makima","Arthur","Sung jin woo",
         "Kakashi","gojo","Senku Ishigami","Kaiman",
         "Denji","Itachi"]
 def index(request):
-    #try:
-        return render(request, "alien/index.html" , {
+    return render(request, "alien/index.html" , {
             "aliens":k,"cont":cont
         })
-    #except:
-    #    return HttpResponse("heello world")
+
+def TTT(request):
+    return render(request,"alien/tictactoe.html")
