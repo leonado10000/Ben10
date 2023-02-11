@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [{
+        "src": "Ben10/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb"}
+    },{
+        "src": "built_files.sh",
+        "use": "@vercel/static_build",
+        "config": {
+            "distDir": "staticfiles_build" , "runtime":"python3.9"
+        }
+    }],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "Ben10/wsgi.py"
+        }
+    ]
+}
