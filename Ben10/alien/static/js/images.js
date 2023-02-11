@@ -5,7 +5,8 @@ addEventListener("DOMContentLoaded", function () {
         off(k);
     })
     on(document.querySelector(".cont1"));
-    on(document.querySelector(".img1"))
+    on(document.querySelector(".img1"));
+    on(document.querySelector(".data1"));
 })
 
 function on(x){

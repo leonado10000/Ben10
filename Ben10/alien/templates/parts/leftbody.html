@@ -5,37 +5,40 @@
         {{ x }} 
     </h1>
     {% endfor %}
+    
     <div class="data">
-        <table style="font-size: 20px;-webkit-text-fill-color: brown;">
+        {% for j in data %}
+        <table class="Alien data{{ forloop.counter  }}" style="font-size: 20px;-webkit-text-fill-color: brown;">
             <tr>
                 <td>LVL</td>
-                <td>X</td>
+                <td>{{ j.0 }} </td>
             </tr>
             <tr>
-                <td>Strength</td>
-                <td>X</td>
+                <td>Physical Strength</td>
+                <td>{{ j.1 }} </td>
             </tr>
             <tr>
-                <td>Intelligence</td>
-                <td>X</td>
+                <td>Intelligence (IQ)</td>
+                <td>{{ j.2 }} </td>
             </tr>
             <tr>
                 <td>Suffering</td>
-                <td>X</td>
+                <td>{{ j.3 }} </td>
             </tr>
             <tr>
                 <td>Hardwork</td>
-                <td>X</td>
+                <td>{{ j.4 }} </td>
             </tr>
             <tr>
                 <td>Luck</td>
-                <td>X</td>
+                <td>{{ j.5 }} </td>
             </tr>
             <tr>
                 <td>Speed</td>
-                <td>X</td>
+                <td>{{ j.6 }} </td>
             </tr>
         </table>
+        {% endfor %}
     </div>
 </div>
 <div class="rightarrow"><button class="button-49" onclick="next(1)">>></button></div>

@@ -4,6 +4,7 @@ function next(n){
     
     off(document.querySelector(`.img${img_c}`));
     off(document.querySelector(`.cont${img_c}`));
+    off(document.querySelector(`.data${img_c}`));
     
     if (n==0){
         if(img_c == 1){
@@ -24,5 +25,6 @@ function next(n){
     //document.querySelector(`.img${img_c}`).className +=" w3-container w3-center w3-animate-right";
     on(document.querySelector(`.img${img_c}`));
     on(document.querySelector(`.cont${img_c}`));
+    on(document.querySelector(`.data${img_c}`));
 
 }
