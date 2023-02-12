@@ -7,7 +7,11 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 """
 
-import os
+import os, pathlib
+
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+ENV_FILE = BASE_DIR / '.env'
+
 
 from django.core.wsgi import get_wsgi_application
 
