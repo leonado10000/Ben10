@@ -1,24 +1,13 @@
 {
-    "version": 2,
     "builds": [{
         "src": "Ben10/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb" , "runtime":"python3.9"}
-    },{
-        "src": "built_files.sh",
-        "use": "@vercel/static-build",
-        "config": {
-            "distDir": "staticfiles_build" 
-        }
+        "use": "@ardnt/vercel-python-wsgi",
+        "config": { "maxLambdaSize": "15mb" }
     }],
     "routes": [
         {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-        {
             "src": "/(.*)",
-            "dest": "/Ben10/wsgi.py"
+            "dest": "alien/wsgi.py"
         }
     ]
 }

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9+@)su@f)b2&vr0&=u5c$9u(y97djlyr$_sis*iep-6x@p(g7r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app'] # Allow *.vercel.app
 
 
 # Application definition
@@ -74,13 +74,13 @@ WSGI_APPLICATION = 'Ben10.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
