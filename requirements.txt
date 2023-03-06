@@ -2,3 +2,14 @@
 # https://github.com/jayhale/vercel-django-example/blob/main/requirements.txt#L1
 
 Django==3.2
+
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+
+[requires]
+python_version = "3.9"
