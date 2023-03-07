@@ -6,8 +6,9 @@
     <title>TTT</title>
 
     <style>
-        body{
-            background-color: black;
+        @media (min-width:600px) {
+            body{
+            background-color: wheat;
         }
 
         .bix{
@@ -20,10 +21,85 @@
             grid-template-rows: 1fr 1fr 1fr;
             font-size: 100px;
         }
+        .bix button{
+            background-color: transparent;
+            font-size:xx-large;
+        }
+        .b1,.b2,.b3{
+            border-top: 0px;
+        }
+        .b1,.b4,.b7{
+            border-left: 0px;
+        }
+        .b7,.b8,.b9{
+            border-bottom: 0px;
+        }
+        .b9,.b6,.b3{
+            border-right: 0px;
+        }
+        .re{
+            font-size: x-large;
+            width: 200px;
+            height: 100px;
+        }
+        h1{
+            text-align: center;
+        }
+        }
+        @media ( max-width : 599px){
+            body{
+                background-color: wheat;
+            }
+        .bix{
+            position: absolute;
+            margin-top: 30%;
+            /* margin-left: 32%; */
+            height: 500px;
+            width: 500px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            font-size: 100px;
+        }
+        .bix button{
+            background-color: transparent;
+            font-size:xx-large;
+        }
+        .b1,.b2,.b3{
+            border-top: 0px;
+        }
+        .b1,.b4,.b7{
+            border-left: 0px;
+        }
+        .b7,.b8,.b9{
+            border-bottom: 0px;
+        }
+        .b9,.b6,.b3{
+            border-right: 0px;
+        }
+        
+        .re{
+            position: absolute;
+            bottom: -100px;
+            right: 23%;
+            font-size: x-large;
+            width: 200px;
+            height: 100px;
+        }
+        h1{
+            position:absolute;
+            right:23%;
+        }
+        
+
+        }
 
     </style>
 
     <script>
+        function re(){
+            window.location.reload();
+        }
         
         let point = -1;
 
@@ -56,9 +132,11 @@
             if(point%2 == 0){
                 if(document.querySelector(".b1").innerHTML == "O" && document.querySelector(".b5").innerHTML == "O" && document.querySelector(".b9").innerHTML == "O"){
                     call(6,"cr");
+                    document.querySelector("h1").innerHTML = "Winner is O";
                 }
                 if(document.querySelector(".b3").innerHTML == "O" && document.querySelector(".b5").innerHTML == "O" && document.querySelector(".b7").innerHTML == "O"){
                     call(5,"cr");
+                    document.querySelector("h1").innerHTML = "Winner is O";
                 }
                 let i =1;
                 for(i=1;i<=3;i++){
@@ -74,6 +152,7 @@
                     }
                     if (ans == i){
                         call(i,"r");
+                        document.querySelector("h1").innerHTML = "Winner is O";
                         break;
                     }
                     ans = i;
@@ -86,6 +165,7 @@
                     }
                     if (ans == i){
                         call(i,"c")
+                        document.querySelector("h1").innerHTML = "Winner is O";
                         break;
                     }
 
@@ -95,9 +175,11 @@
             else{
                 if(document.querySelector(".b1").innerHTML == "X" && document.querySelector(".b5").innerHTML == "X" && document.querySelector(".b9").innerHTML == "X"){
                     call(6,"cr");
+                    document.querySelector("h1").innerHTML = "Winner is X";
                 }
                 if(document.querySelector(".b3").innerHTML == "X" && document.querySelector(".b5").innerHTML == "X" && document.querySelector(".b7").innerHTML == "X"){
                     call(5,"cr");
+                    document.querySelector("h1").innerHTML = "Winner is X";
                 }
                 let i =1;
                 for(i=1;i<=3;i++){
@@ -113,6 +195,7 @@
                     }
                     if (ans == i){
                         call(i,"r");
+                        document.querySelector("h1").innerHTML = "Winner is X";
                         break;
                     }
                     ans = i;
@@ -125,6 +208,7 @@
                     }
                     if (ans == i){
                         call(i,"c")
+                        document.querySelector("h1").innerHTML = "Winner is X";
                         break;
                     }
 
@@ -158,7 +242,7 @@
 
 </head>
 <body>
-
+    <h1></h1>
     <div class="bix">
 
     
@@ -181,6 +265,8 @@
         <button class="b9 bt r3 c3" onclick="sexy(9)"></button>
 
     </div>
+
+    <button onclick="re()" class="re">Restart</button>
     
 </body>
 </html>
